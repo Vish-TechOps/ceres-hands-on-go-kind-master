@@ -102,9 +102,6 @@ https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master
  ======================================================================
 Cloning and working on task
  
-GitHub: vish.techops@gmail.com | #Spaceproxy*#1
-GitLab: vish.techops@gmail.com | #Spaceproxy*#
-DockerHub: vishtechops | #Spaceproxy*# 
 
 <STEP1>
 
