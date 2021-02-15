@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  goapp:
+    image: todo-app-go:v1.1.0
+    links:
+      - mongodb
+    ports:
+      - "9000:9000"
+    networks:
+      - backend
+  mongodb:
+    image: mongo:v1-3.6.22
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+networks:
+   backend:
+      driver: "bridge"

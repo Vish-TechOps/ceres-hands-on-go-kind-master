@@ -1,13 +1,11 @@
-FROM woahbase/alpine-glibc:latest
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+FROM golang:1.14.3-alpine
 
 EXPOSE 9000
 
-COPY todo-app-go bin/
+COPY ceres-hands-on-go-kind-master bin/
 
 WORKDIR bin
 
-RUN chmod +x todo-app-go
+RUN chmod +x ceres-hands-on-go-kind-master
 
-CMD ["todo-app-go"]
-
+CMD ["tail", "-f", "/dev/null"]
