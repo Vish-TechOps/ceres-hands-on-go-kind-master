@@ -1,0 +1,414 @@
+
+Repository Link: https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master
+
+Containerization hands-on excercise
+
+Prerequisites
+==================================
+Docker Desktop and Kind deployed
+Kind cluster created. See kind/ directory
+
+
+
+Prerequisites:-
+https://docs.docker.com/docker-for-windows/install/
+Install Docker Desktop on Windows
+Docker Desktop for Windows is the Community version of Docker for Microsoft Windows. You can download Docker Desktop for Windows from Docker Hub.
+
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
+
+
+docker run -d -p 80:80 docker/getting-started
+
+================
+https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master/tree/master/kind
+https://kind.sigs.k8s.io/docs/user/configuration/
+
+<USE this>
+https://kind.sigs.k8s.io/docs/user/quick-start
+
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.10.0/kind-windows-amd64
+Move-Item .\kind-windows-amd64.exe C:\Users\vsingh33\Desktop\Vish-Data-Completed\ceres-hands-on-go-kind-master\ceres-hands-on-go-kind-master\kind.exe
+
+Add in path variable
+
+C:\WINDOWS\system32>kind
+kind creates and manages local Kubernetes clusters using Docker container 'nodes'
+
+Usage:
+  kind [command]
+
+Available Commands:
+  build       Build one of [node-image]
+  completion  Output shell completion code for the specified shell (bash, zsh or fish)
+  create      Creates one of [cluster]
+  delete      Deletes one of [cluster]
+  export      Exports one of [kubeconfig, logs]
+  get         Gets one of [clusters, nodes, kubeconfig]
+  help        Help about any command
+  load        Loads images into nodes
+  version     Prints the kind CLI version
+
+Flags:
+  -h, --help              help for kind
+      --loglevel string   DEPRECATED: see -v instead
+  -q, --quiet             silence all stderr output
+  -v, --verbosity int32   info log verbosity
+      --version           version for kind
+
+Use "kind [command] --help" for more information about a command.
+
+Directory of C:\Users\vsingh33\Desktop\Vish-Data-Completed\ceres-hands-on-go-kind-master\ceres-hands-on-go-kind-master\kind
+
+02/08/2021  08:24 PM    <DIR>          .
+02/08/2021  08:24 PM    <DIR>          ..
+02/08/2021  08:24 PM    <DIR>          data
+02/05/2021  04:41 AM               180 kind.yaml
+02/05/2021  04:41 AM               619 README.md
+               2 File(s)            799 bytes
+               3 Dir(s)  334,620,119,040 bytes free
+
+C:\Users\vsingh33\Desktop\Vish-Data-Completed\ceres-hands-on-go-kind-master\ceres-hands-on-go-kind-master\kind>kind create cluster --config kind.yaml
+Creating cluster "resideo-hands-on" ...
+ • Ensuring node image (kindest/node:v1.20.2) 🖼  ...
+ ✓ Ensuring node image (kindest/node:v1.20.2) 🖼
+ • Preparing nodes 📦 📦   ...
+ ✓ Preparing nodes 📦 📦
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+Set kubectl context to "kind-resideo-hands-on"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-resideo-hands-on
+
+Have a nice day! 👋
+
+
+Task
+
+https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master
+
+
+ ======================================================================
+Cloning and working on task
+ 
+<STEP1>
+
+1) Create Private repo in GitHub
+2) Git clone empty repo and unzip ceres-hands-on-go-kind-master.zip
+3) Git commands to push changes into Master in repo
+4) Visual studio is set for git commands with github repo
+
+<STEP2>
+Now follow clsuter creations steps
+https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master/tree/master/kind
+Creating cluster
+Install prerequisites
+Chage directory to kind - this will allow you to mount data volume from relative path
+Run
+- kind create cluster --config kind.yaml4
+- kind get clusters
+- kubectl cluster-info --context kind-resideo-hands-on
+VERIFY IN DOCKER Desktop
+Worker node and control plan should be running
+
+<STEP3>
+Now work on tasks
+https://github.com/Vish-TechOps/ceres-hands-on-go-kind-master
+Task section
+
+$ git checkout -b ToDo-App-Feature-Branch
+Switched to a new branch 'ToDo-App-Feature-Branch'
+Singh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -rlt
+total 12
+-rw-r--r-- 1 VSingh33 1049089 1381 Feb  8 22:39 README.md
+drwxr-xr-x 1 VSingh33 1049089    0 Feb  8 22:39 kind
+-rw-r--r-- 1 VSingh33 1049089 5222 Feb  8 22:39 main.go
+drwxr-xr-x 1 VSingh33 1049089    0 Feb  8 22:39 static
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ pwd
+/d/ceres-hands-on-go-kind-master
+## Clone the source code to your $GOPATH/src directory, use go get . command to run the install the dependencies.
+
+Run below commads on feature branch
+export GOPATH=/d/ceres-hands-on-go-kind-master
+echo $GOPATH  
+$ go env GOPATH
+D:/ceres-hands-on-go-kind-master  
+go get .
+go build
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go env GOPATH
+D:/ceres-hands-on-go-kind-master
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go get .
+go get: no install location for directory D:\ceres-hands-on-go-kind-master outside GOPATH
+        For more details see: 'go help gopath'
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go build
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -lrt
+total 12153
+-rw-r--r-- 1 VSingh33 1049089     1381 Feb  8 22:39 README.md
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  8 22:39 kind
+-rw-r--r-- 1 VSingh33 1049089     5222 Feb  8 22:39 main.go
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  8 22:39 static
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  8 22:55 src
+-rw-r--r-- 1 VSingh33 1049089      200 Feb  8 23:06 Dockerfile
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  8 23:14 pkg
+-rwxr-xr-x 1 VSingh33 1049089 12428800 Feb  8 23:44 ceres-hands-on-go-kind-master.exe
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -lrt
+total 201
+-rw-r--r-- 1 VSingh33 1049089  15396 Feb  9 00:28 demonstrate-end-to-end-setup-logs.txt
+-rw-r--r-- 1 VSingh33 1049089   1381 Feb  9 09:43 README.md
+drwxr-xr-x 1 VSingh33 1049089      0 Feb  9 09:43 kind
+-rw-r--r-- 1 VSingh33 1049089   5222 Feb  9 09:43 main.go
+-rw-r--r-- 1 VSingh33 1049089    213 Feb  9 09:53 Dockerfile
+-rw-r--r-- 1 VSingh33 1049089 172179 Feb  9 09:53 demonstrate-end-to-end-setup.docx    
+drwxr-xr-x 1 VSingh33 1049089      0 Feb 12 20:19 static
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ echo $GOPATH
+C:\Users\vsingh33\go
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ echo $GOROOT
+
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go build
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -lrt
+total 201
+-rw-r--r-- 1 VSingh33 1049089  15396 Feb  9 00:28 demonstrate-end-to-end-setup-logs.txt
+-rw-r--r-- 1 VSingh33 1049089   1381 Feb  9 09:43 README.md
+drwxr-xr-x 1 VSingh33 1049089      0 Feb  9 09:43 kind
+-rw-r--r-- 1 VSingh33 1049089   5222 Feb  9 09:43 main.go
+-rw-r--r-- 1 VSingh33 1049089    213 Feb  9 09:53 Dockerfile
+-rw-r--r-- 1 VSingh33 1049089 172179 Feb  9 09:53 demonstrate-end-to-end-setup.docx    
+drwxr-xr-x 1 VSingh33 1049089      0 Feb 12 20:19 static
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ echo $GOPATH
+C:\Users\vsingh33\go
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ echo $GOROOT
+
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go build
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -lrt
+total 12337
+-rw-r--r-- 1 VSingh33 1049089    15396 Feb  9 00:28 demonstrate-end-to-end-setup-logs.txt
+-rw-r--r-- 1 VSingh33 1049089     1381 Feb  9 09:43 README.md
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  9 09:43 kind
+-rw-r--r-- 1 VSingh33 1049089     5222 Feb  9 09:43 main.go
+-rw-r--r-- 1 VSingh33 1049089      213 Feb  9 09:53 Dockerfile
+-rw-r--r-- 1 VSingh33 1049089   172179 Feb  9 09:53 demonstrate-end-to-end-setup.docx
+drwxr-xr-x 1 VSingh33 1049089        0 Feb 12 20:19 static
+-rwxr-xr-x 1 VSingh33 1049089 12425216 Feb 12 21:02 ceres-hands-on-go-kind-master.exe
+
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ./ceres-hands-on-go-kind-master.exe
+2021/02/12 21:05:45 no reachable servers
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED      STATUS      PORTS                       NAMES
+a9a684a291ad   kindest/node:v1.20.2   "/usr/local/bin/entr…"   3 days ago   Up 3 days                               resideo-hands-on-worker
+dd976b5cb0c0   kindest/node:v1.20.2   "/usr/local/bin/entr…"   3 days ago   Up 3 days   127.0.0.1:51169->6443/tcp   resideo-hands-on-control-plane
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker pull mongo:3.6.22
+3.6.22: Pulling from library/mongo
+4007a89234b4: Pull complete
+5dfa26c6b9c9: Pull complete
+0ba7bf18aa40: Pull complete
+4c6ec688ebe3: Pull complete
+6e27db06de4c: Pull complete
+bbecf0ce3761: Pull complete
+ce97543d924d: Pull complete
+7299669aa5f5: Pull complete
+e5fda94ce451: Pull complete
+3673227c8d34: Pull complete
+4bb718560867: Pull complete
+c687b7b215c2: Pull complete
+b31a5ddc71fa: Pull complete
+Digest: sha256:4f509daa35e7a383312592432ae624721b0f2d16210e787a5c90965907859f8d
+Status: Downloaded newer image for mongo:3.6.22
+docker.io/library/mongo:3.6.22
+
+docker run -itd -p 27017:27017 --name mongodb mongo:3.6.22
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker ps
+CONTAINER ID   IMAGE                  COMMAND                  CREATED              STATUS              PORTS                       NAMES
+f83669a868a0   mongo:3.6.22           "docker-entrypoint.s…"   About a minute ago   Up About a minute   0.0.0.0:27017->27017/tcp    mongodb
+a9a684a291ad   kindest/node:v1.20.2   "/usr/local/bin/entr…"   3 days ago           Up 3 days                                       resideo-hands-on-worker
+dd976b5cb0c0   kindest/node:v1.20.2   "/usr/local/bin/entr…"   3 days ago           Up 3 days           127.0.0.1:51169->6443/tcp   resideo-hands-on-control-plane
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker exec -it f83669a868a0 bash
+root@f83669a868a0:/# mongo -host localhost -port 27017  
+MongoDB shell version v3.6.22
+connecting to: mongodb://localhost:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("1bca75e3-313e-4459-b855-65f475476a39") }
+MongoDB server version: 3.6.22
+Welcome to the MongoDB shell.
+For interactive help, type "help".       
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+Server has startup warnings:
+2021-02-12T16:08:30.376+0000 I STORAGE  [initandlisten]
+2021-02-12T16:08:30.376+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-02-12T16:08:30.376+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-02-12T16:08:31.003+0000 I CONTROL  [initandlisten]
+2021-02-12T16:08:31.004+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-02-12T16:08:31.004+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-02-12T16:08:31.004+0000 I CONTROL  [initandlisten]
+2021-02-12T16:08:31.005+0000 I CONTROL  [initandlisten]
+2021-02-12T16:08:31.005+0000 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2021-02-12T16:08:31.005+0000 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2021-02-12T16:08:31.005+0000 I CONTROL  [initandlisten]
+> use demo_todo
+switched to db demo_todo
+> db.createCollection("todo")
+{ "ok" : 1 }
+> 
+
+===
+
+FROM woahbase/alpine-glibc:latest
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ ls -lrt
+total 12337
+-rw-r--r-- 1 VSingh33 1049089    15396 Feb  9 00:28 demonstrate-end-to-end-setup-logs.txt
+-rw-r--r-- 1 VSingh33 1049089     1381 Feb  9 09:43 README.md
+drwxr-xr-x 1 VSingh33 1049089        0 Feb  9 09:43 kind
+-rw-r--r-- 1 VSingh33 1049089     5222 Feb  9 09:43 main.go
+-rw-r--r-- 1 VSingh33 1049089   172179 Feb  9 09:53 demonstrate-end-to-end-setup.docx
+-rwxr-xr-x 1 VSingh33 1049089 12425216 Feb 12 21:02 ceres-hands-on-go-kind-master.exe
+drwxr-xr-x 1 VSingh33 1049089        0 Feb 12 21:44 static
+-rw-r--r-- 1 VSingh33 1049089      275 Feb 12 21:59 Dockerfile
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker build -t todo-app-go:v1.2.0 .
+[+] Building 145.9s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                                                                                                                                                                                    0.0s 
+ => => transferring dockerfile: 227B                                                                                                                                                                                                    0.0s 
+ => [internal] load .dockerignore                                                                                                                                                                                                       0.0s 
+ => => transferring context: 2B                                                                                                                                                                                                         0.0s 
+ => [internal] load metadata for docker.io/library/golang:1.10                                                                                                                                                                          5.9s 
+ => [auth] library/golang:pull token for registry-1.docker.io                                                                                                                                                                           0.0s 
+ => [1/4] FROM docker.io/library/golang:1.10@sha256:6d5e79878a3e4f1b30b7aa4d24fb6ee6184e905a9b172fc72593935633be4c46                                                                                                                  138.8s 
+ => => resolve docker.io/library/golang:1.10@sha256:6d5e79878a3e4f1b30b7aa4d24fb6ee6184e905a9b172fc72593935633be4c46                                                                                                                    0.0s 
+ => => sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968 45.34MB / 45.34MB                                                                                                                                       59.2s 
+ => => sha256:6d5e79878a3e4f1b30b7aa4d24fb6ee6184e905a9b172fc72593935633be4c46 3.46kB / 3.46kB                                                                                                                                          0.0s 
+ => => sha256:6fd1f7edb6ab06a00b9d8a68836202042694651c5963f463afca8b76a693e099 5.47kB / 5.47kB                                                                                                                                          0.0s 
+ => => sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388 4.34MB / 4.34MB                                                                                                                                          3.9s 
+ => => sha256:eac40ba14416262e26def90a2d6f10d6ff579ea61c267963f6cbfbbe63b0ea7b 1.80kB / 1.80kB                                                                                                                                          0.0s 
+ => => sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2 10.78MB / 10.78MB                                                                                                                                       21.2s 
+ => => sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8 50.06MB / 50.06MB                                                                                                                                       82.2s 
+ => => sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb 57.62MB / 57.62MB                                                                                                                                      104.5s 
+ => => extracting sha256:741437d97401b83849ccbfe4ed8964049b752081647d7f1ea8aea29d989f8968                                                                                                                                               2.7s 
+ => => sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874 102.19MB / 102.19MB                                                                                                                                    131.7s 
+ => => extracting sha256:34d8874714d74b636739b8a52204650a664fca8ff9741dd66810f30196f103e2                                                                                                                                               0.5s 
+ => => extracting sha256:0a108aa2667933b852b8d003f97b344d014fcd7e06a0c0e6e04f2d6906738388                                                                                                                                               0.2s 
+ => => sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829 126B / 126B                                                                                                                                             83.8s 
+ => => extracting sha256:7f0334c36886bd4619e8d05ccf68003e53b0b6098b2166a216bd009dba678ed8                                                                                                                                               3.6s 
+ => => extracting sha256:d35724ed4672cc1ac62dca685634f02297e306fd1920dd76996799c00b728cbb                                                                                                                                               3.3s 
+ => => extracting sha256:c0eaf021aeaf304faaa8b6cb5a967532e83d0c9af364ab091bb947943e31c874                                                                                                                                               6.5s 
+ => => extracting sha256:d3d9c96611f1f779cd0bf0d343ff910d5bc1aafb180b4e3aac7190db8269a829                                                                                                                                               0.0s 
+ => [internal] load build context                                                                                                                                                                                                       0.2s 
+ => => transferring context: 12.43MB                                                                                                                                                                                                    0.2s 
+ => [2/4] COPY ceres-hands-on-go-kind-master.exe bin/                                                                                                                                                                                   0.4s 
+ => [3/4] WORKDIR bin                                                                                                                                                                                                                   0.1s 
+ => [4/4] RUN chmod +x ceres-hands-on-go-kind-master.exe                                                                                                                                                                                0.4s 
+ => exporting to image                                                                                                                                                                                                                  0.2s 
+ => => exporting layers                                                                                                                                                                                                                 0.2s 
+ => => writing image sha256:d7b1dfff44aa0a19c02be6f110241cfcfb6f1ef1a064057b9acb3f7c4b437cf8                                                                                                                                            0.0s 
+ => => naming to docker.io/library/todo-app-go:v1.1.0                                                                                                                                                                                   0.0s 
+
+
+==========================================================================================
+DOCKER COMPOSE Setup
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ cat docker-compose.yml 
+version: "3.5"
+services:
+  goapp:
+    image: todo-app-go:v1.1.0
+    links:
+      - mongodb
+    ports:
+      - "9000:9000"
+    networks:
+      - backend
+  mongodb:
+    image: mongo:v1-3.6.22
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - backend
+networks:
+   backend:
+      driver: "bridge"
+	  
+
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ docker-compose up -d
+Creating network "ceres-hands-on-go-kind-master_backend" with driver "bridge"
+Creating ceres-hands-on-go-kind-master_mongodb_1 ... done
+Creating ceres-hands-on-go-kind-master_goapp_1   ... done
+
+============================
+ISSUE FACED DURING GO GET AND GO Build
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go build
+# github.com/go-chi/chi
+src\github.com\go-chi\chi\tree.go:60:20: invalid operation: 2 << n (shift count type int, must be unsigned integer)
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go get github.com/go-chi/chi
+# github.com/go-chi/chi
+src\github.com\go-chi\chi\tree.go:60:20: invalid operation: 2 << n (shift count type int, must be unsigned integer)
+
+
+VSingh33@SLB-F8J81N2 MINGW64 /d/ceres-hands-on-go-kind-master (ToDo-App-Feature-Branch)
+$ go version
+go version go1.11.13 windows/amd64
+
+Upgraed go
+https://golang.org/dl/
+Download and Install
+

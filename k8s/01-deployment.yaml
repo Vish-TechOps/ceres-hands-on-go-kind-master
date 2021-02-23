@@ -1,0 +1,73 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: todo-app
+    env: demo
+  name: todo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0%
+      maxSurge: 100%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: todo-app
+        env: demo
+    spec:
+      containers:
+      - name: goapp
+        image: todo-app-go:v1.1.0
+        ports:
+        - containerPort: 9000
+          name: http
+        readinessProbe:
+          tcpSocket:
+            port: 9000
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          timeoutSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 9000
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          timeoutSeconds: 10
+        resources:
+          requests:
+            cpu: 50m
+            memory: "128Mi"
+           limits:
+             cpu: 500m
+             memory: "1Gi"
+      - name: mongodb
+        image: mongo:v1-3.6.22
+        ports:
+        - containerPort: 27017
+          name: http
+        readinessProbe:
+          tcpSocket:
+            port: 27017
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          timeoutSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 27017
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          timeoutSeconds: 10
+        resources:
+          requests:
+            cpu: 50m
+            memory: "128Mi"
+           limits:
+             cpu: 500m
+             memory: "1Gi"
